@@ -1,0 +1,1 @@
+# nilesoft shell config
