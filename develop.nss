@@ -1,4 +1,6 @@
-﻿menu(mode="multiple" title='开发' vis=key.shift() sep=sep.bottom image=\uE26E)
+﻿item(type='dir' title='通过 VS Code 打开' image=[\uE272, #22A7F2] cmd='code' args='"@sel.path"')
+
+menu(mode="multiple" title='开发' vis=key.shift() sep=sep.bottom image=\uE26E)
 {
 	menu(mode="single" title='编辑器' image=\uE17A)
 	{
