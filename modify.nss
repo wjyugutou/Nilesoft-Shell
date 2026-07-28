@@ -4,8 +4,6 @@ modify(mode=mode.multiple
 	where=this.id(id.restore_previous_versions,id.cast_to_device)
 	vis=vis.remove)
 
-modify(mode=mode.multiple find="One|兼容性疑难解答|Defender|收藏夹|共享|新建压缩包|clipchamp" vis=vis.remove)
-
 modify(type="recyclebin" where=window.is_desktop and this.id==id.empty_recycle_bin pos=1 sep)
 
 modify(find="unpin*" pos="bottom" menu="Pin/Unpin")
@@ -34,3 +32,15 @@ modify(mode=mode.multiple
 		id.print
 	)
 	pos=1 menu="显示更多选项")
+
+// 隐藏 QQ 音乐在文件夹右键菜单中的条目
+modify(find='QQ音乐' type='dir|back.directory' vis=remove)
+modify(find='QQMusic' type='dir|back.directory' vis=remove)
+
+// 隐藏 Windows Media Player 相关右键菜单
+modify(find='Windows Media Player' vis=remove)
+
+// powershell7
+modify(find='PowerShell 7' vis=remove)
+
+modify(mode=mode.multiple find="One|兼容性疑难解答|Defender|收藏夹|共享|新建压缩包|clipchamp" vis=vis.remove)

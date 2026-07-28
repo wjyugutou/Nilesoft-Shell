@@ -1,4 +1,8 @@
-﻿menu(type="taskbar" vis=key.shift() or key.lbutton() pos=0 title=app.name image=\uE249)
+﻿// $title.task_manager='任务管理器'
+// $title.taskbar_Settings='任务栏设置'
+// $title.exit_explorer='重启资源管理器'
+
+menu(type="taskbar" pos=0 title=app.name image=\uE249)
 {
 	item(title="配置" image=\uE10A cmd='"@app.cfg"')
 	item(title="管理器" image=\uE0F3 admin cmd='"@app.exe"')
@@ -9,25 +13,25 @@
 }
 menu(where=@(this.count == 0) type='taskbar' image=icon.settings expanded=true)
 {
-	menu(title="应用" image=\uE254 vis=0)
+	menu(title="Apps" image=\uE254 vis=0)
 	{
 		item(title='画图' image=\uE116 cmd='mspaint')
 		item(title='Edge' image cmd='@sys.prog32\Microsoft\Edge\Application\msedge.exe')
 		item(title='计算器' image=\ue1e7 cmd='calc.exe')
 		item(title=str.res('regedit.exe,-16') image cmd='regedit.exe')
 	}
-	menu(title="窗口" image=\uE1FB vis=0)
-	{
-		item(title="层叠窗口" cmd=command.cascade_windows)
-		item(title="堆叠显示窗口" cmd=command.Show_windows_stacked)
-		item(title="并排显示窗口" cmd=command.Show_windows_side_by_side)
-		sep
-		item(title="全部最小化" cmd=command.minimize_all_windows)
-		item(title="全部还原" cmd=command.restore_all_windows)
-	}
+	// menu(title="窗口" title.windows image=\uE1FB)
+	// {
+	// 	item(title="层叠窗口" cmd=command.cascade_windows)
+	// 	item(title="堆叠显示窗口" cmd=command.Show_windows_stacked)
+	// 	item(title="并排显示窗口" cmd=command.Show_windows_side_by_side)
+	// 	sep
+	// 	item(title="全部最小化" cmd=command.minimize_all_windows)
+	// 	item(title="全部还原" cmd=command.restore_all_windows)
+	// }
 	item(title="显示桌面" image=icon.desktop cmd=command.toggle_desktop)
 	item(title="设置" image=icon.settings(auto, image.color1) cmd='ms-settings:')
-	item(title="任务管理器"  sep=both image=icon.task_manager cmd='taskmgr.exe')
+	item(title="任务管理器" sep=both image=icon.task_manager cmd='taskmgr.exe')
 	item(title="任务栏设置" sep=both image=inherit cmd='ms-settings:taskbar')
-	item(vis=key.shift() title="退出资源管理器" cmd=command.restart_explorer)
+	item(title="重启资源管理器" cmd=command.restart_explorer)
 }
