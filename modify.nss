@@ -33,6 +33,8 @@ modify(mode=mode.multiple
 	)
 	pos=1 menu="显示更多选项")
 
+modify(mode=mode.multiple find="固定到任务栏|固定到“开始”" vis=vis.remove)
+
 // 隐藏 QQ 音乐在文件夹右键菜单中的条目
 modify(find='QQ音乐' type='dir|back.directory' vis=remove)
 modify(find='QQMusic' type='dir|back.directory' vis=remove)
