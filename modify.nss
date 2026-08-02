@@ -17,7 +17,7 @@ modify(where=str.equals(this.name, ["open in terminal", "open linux shell here"]
 
 modify(mode=mode.multiple
 	where=this.id(
-		id.send_to,
+		// id.send_to,
 		id.share,
 		id.create_shortcut,
 		id.set_as_desktop_background,
@@ -36,13 +36,13 @@ modify(mode=mode.multiple
 modify(mode=mode.multiple find="固定到任务栏|固定到“开始”" vis=vis.remove)
 
 // 隐藏 QQ 音乐在文件夹右键菜单中的条目
-modify(find='QQ音乐' type='dir|back.directory' vis=remove)
-modify(find='QQMusic' type='dir|back.directory' vis=remove)
+modify(find='QQ音乐' type='dir|back.directory' vis=vis.remove)
+modify(find='QQMusic' type='dir|back.directory' vis=vis.remove)
 
 // 隐藏 Windows Media Player 相关右键菜单
-modify(find='Windows Media Player' vis=remove)
+modify(find='Windows Media Player' vis=vis.remove)
 
 // powershell7
-modify(find='PowerShell 7' vis=remove)
+modify(find='PowerShell 7' vis=vis.remove)
 
 modify(mode=mode.multiple find="One|兼容性疑难解答|Defender|收藏夹|共享|新建压缩包|clipchamp" vis=vis.remove)
