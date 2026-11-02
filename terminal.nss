@@ -6,5 +6,5 @@ menu(type='*' where=(sel.count or wnd.is_taskbar or wnd.is_edit) title="终端" 
 	item(where=package.exists("WindowsTerminal") title="Windows 终端" tip=tip_run_admin admin=has_admin image='@package.path("WindowsTerminal")\WindowsTerminal.exe' cmd='wt.exe' arg='-d "@sel.path\."')
 	item(title="命令提示符" tip=tip_run_admin admin=has_admin image cmd='cmd.exe' args='/K TITLE Command Prompt &ver& PUSHD "@sel.dir"')
 	item(title="Windows PowerShell" admin=has_admin tip=tip_run_admin image cmd='powershell.exe' args='-noexit -command Set-Location -Path "@sel.dir\."')
-	item(title='Ubuntu (WSL)' tip=tip_run_admin admin=has_admin image=image.res("shell32.dll", 3) cmd='pwsh.exe' args='-noexit -Command wsl.exe -d Ubuntu')
+	item(title='Ubuntu (WSL)' tip=tip_run_admin admin=has_admin image=image.res("shell32.dll", 3) cmd=':\WINDOWS\system32\wsl.exe' args='C --distribution-id {f16c6b46-40af-4f94-a30c-8b4d312a7555}')
 }
