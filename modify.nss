@@ -1,0 +1,58 @@
+// modify items
+// Remove items by identifiers
+modify(mode=mode.multiple
+	where=this.id(id.restore_previous_versions,id.cast_to_device)
+	vis=vis.remove)
+
+modify(type="recyclebin" where=window.is_desktop and this.id==id.empty_recycle_bin pos=1 sep)
+
+modify(find="unpin*" pos="bottom" menu="Pin/Unpin")
+modify(find="pin*" pos="top" menu="Pin/Unpin")
+
+modify(where=this.id==id.copy_as_path menu="file manage")
+modify(type="dir.back|drive.back" where=this.id==id.customize_this_folder pos=1 sep="top" menu="file manage")
+
+modify(where=str.equals(this.name, ["open in terminal", "open linux shell here"]) || this.id==id.open_powershell_window_here
+	pos="bottom" menu="Terminal")
+
+modify(mode=mode.multiple
+	where=this.id(
+		id.send_to,
+		id.share,
+		id.create_shortcut,
+		id.set_as_desktop_background,
+		id.rotate_left,
+		id.rotate_right,
+		id.map_network_drive,
+		id.disconnect_network_drive,
+		id.format,
+		id.eject,
+		id.give_access_to,
+		id.include_in_library,
+		id.print
+	)
+	pos=1 menu="显示更多选项")
+
+modify(mode=mode.multiple find="固定到任务栏|固定到“开始”" vis=hidden)
+
+// 隐藏 QQ 音乐在文件夹右键菜单中的条目
+modify(find='QQ音乐' type='dir|back.directory' vis=hidden)
+modify(find='QQMusic' type='dir|back.directory' vis=hidden)
+
+// 隐藏 Windows Media Player 相关右键菜单
+modify(find='Windows Media Player' vis=hidden)
+
+// powershell7
+modify(find='PowerShell 7' vis=hidden)
+
+// 
+modify(find='病毒查杀' vis=hidden)
+
+modify(find='Open with HBuilder X' vis=hidden)
+modify(find='使用 Visual Studio 打开' vis=hidden)
+modify(find='自动备份该文件夹' vis=hidden)
+modify(find='Compare selected item' vis=hidden)
+modify(find='Manually select items' vis=hidden)
+
+
+modify(mode=mode.multiple find="One|兼容性疑难解答|Defender|收藏夹|共享|新建压缩包|clipchamp" vis=vis.remove)
